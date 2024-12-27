@@ -1,0 +1,33 @@
+@model IEnumerable<GestionCommandes.Core.Entities.Produit>
+
+<h2>Liste des Produits</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Libellé</th>
+            <th>Quantité en stock</th>
+            <th>Prix unitaire</th>
+            <th>Quantité seuil</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produit in Model)
+        {
+            <tr>
+                <td>@produit.Libelle</td>
+                <td>@produit.QuantiteEnStock</td>
+                <td>@produit.PrixUnitaire</td>
+                <td>@produit.QuantiteSeuil</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@produit.Id">Détails</a> |
+                    <a asp-action="Edit" asp-route-id="@produit.Id">Modifier</a> |
+                    <a asp-action="Delete" asp-route-id="@produit.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Ajouter un Produit</a>

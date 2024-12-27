@@ -1,0 +1,18 @@
+@model GestionCommandes.Core.Entities.Produit
+
+<h2>Détails du Produit</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Libellé</dt>
+        <dd class="col-sm-10">@Model.Libelle</dd>
+        <dt class="col-sm-2">Quantité en stock</dt>
+        <dd class="col-sm-10">@Model.QuantiteEnStock</dd>
+        <dt class="col-sm-2">Prix unitaire</dt>
+        <dd class="col-sm-10">@Model.PrixUnitaire</dd>
+        <dt class="col-sm-2">Quantité seuil</dt>
+        <dd class="col-sm-10">@Model.QuantiteSeuil</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>

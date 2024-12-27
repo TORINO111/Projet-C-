@@ -1,0 +1,35 @@
+@model IEnumerable<GestionCommandes.Core.Entities.Client>
+
+<h2>Liste des Clients</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Téléphone</th>
+            <th>Adresse</th>
+            <th>Solde</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.Nom</td>
+                <td>@client.Prenom</td>
+                <td>@client.Telephone</td>
+                <td>@client.Adresse</td>
+                <td>@client.SoldeCompte</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@client.Id">Détails</a> |
+                    <a asp-action="Edit" asp-route-id="@client.Id">Modifier</a> |
+                    <a asp-action="Delete" asp-route-id="@client.Id">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Ajouter un Client</a>

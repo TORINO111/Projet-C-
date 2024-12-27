@@ -1,0 +1,18 @@
+@model GestionCommandes.Core.Entities.Commande
+
+<h2>Détails de la Commande</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Date</dt>
+        <dd class="col-sm-10">@Model.Date</dd>
+        <dt class="col-sm-2">Montant</dt>
+        <dd class="col-sm-10">@Model.Montant</dd>
+        <dt class="col-sm-2">Client</dt>
+        <dd class="col-sm-10">@Model.Client.Nom @Model.Client.Prenom</dd>
+        <dt class="col-sm-2">État</dt>
+        <dd class="col-sm-10">@Model.Etat</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
